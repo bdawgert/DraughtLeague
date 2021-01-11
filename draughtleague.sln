@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtLeague.Console", "dr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtLeague.Untappd", "draughtleague.Untappd\DraughtLeague.Untappd.csproj", "{7F097427-6C89-4EC5-B07D-1B9A73528032}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtLeague.DAL", "DraughtLeague.DAL\DraughtLeague.DAL.csproj", "{2BDDE218-C3C0-4778-8446-2AF03E28257D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7F097427-6C89-4EC5-B07D-1B9A73528032}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F097427-6C89-4EC5-B07D-1B9A73528032}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F097427-6C89-4EC5-B07D-1B9A73528032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BDDE218-C3C0-4778-8446-2AF03E28257D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BDDE218-C3C0-4778-8446-2AF03E28257D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BDDE218-C3C0-4778-8446-2AF03E28257D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BDDE218-C3C0-4778-8446-2AF03E28257D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

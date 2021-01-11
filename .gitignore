@@ -6,6 +6,7 @@
 *.user
 *.sln.docstates
 secret.json
+secrets.json
 
 # Build results
 
