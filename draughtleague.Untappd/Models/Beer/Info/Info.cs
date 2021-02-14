@@ -15,6 +15,11 @@ namespace DraughtLeague.Untappd.Models.Beer.Info
         [JsonProperty("beer_style")]
         public string Style { get; set; }
         [JsonProperty("rating_score")]
-        public float Rating { get; set; }
+        public decimal Rating { get; set; }
+        [JsonProperty("stats")]
+        public Statistics Statistics { get; set; }
+        [JsonProperty("brewery")]
+        public Brewery Brewery { get; set; }
+
     }
 }

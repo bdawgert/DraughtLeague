@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DraughtLeague.DAL\DraughtLeague.DAL.csproj" />
+    <ProjectReference Include="..\DraughtLeague.Identity\DraughtLeague.Identity.csproj" />
     <ProjectReference Include="..\draughtleague.Untappd\DraughtLeague.Untappd.csproj" />
   </ItemGroup>
 

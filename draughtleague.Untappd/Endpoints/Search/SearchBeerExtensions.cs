@@ -42,7 +42,7 @@ namespace DraughtLeague.Untappd.Endpoints.Search
 
             List<BeerItem> results = new List<BeerItem>();
 
-            HttpResponseMessage responseMesage = endpoint.Service.Client.GetAsync(url).GetAwaiter().GetResult();
+            HttpResponseMessage responseMesage = await endpoint.Service.Client.GetAsync(url);
             //if (!responseMesage.IsSuccessStatusCode)
 
             string json = await responseMesage.Content.ReadAsStringAsync();

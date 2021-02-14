@@ -1,0 +1,49 @@
+﻿@model DraughtLeague.Web.ViewModels.Account.RegisterVM
+@{
+    ViewBag.Title = "Draught League | Register";
+}
+
+<div class="body-content" style="width: 500px">
+    <div Style="margin: 0 auto; width: 400px">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary()
+
+            <div class="form-row" style="margin-bottom: 15px">
+                <div class="form-label">
+                    Email Address
+                </div>
+                <div style="text-align: right">
+                    @Html.TextBoxFor(m => m.EmailAddress, new { style = "width: 200px" })
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-label">
+                    Password
+                </div>
+                <div style="text-align: right">
+                    @Html.PasswordFor(m => m.Password, new { style = "width: 200px" })
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-label">
+                    Confirm Password
+                </div>
+                <div style="text-align: right">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { style = "width: 200px" })
+                </div>
+            </div>
+            <div style="text-align: center">
+                <input type="submit" value="Register" style="margin: 15px;" />
+            </div>
+        }
+    </div>
+</div>
+
+    <style>
+        .form-label {
+            width: 200px
+        }
+    </style>

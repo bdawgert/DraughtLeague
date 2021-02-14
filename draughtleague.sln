@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtLeague.Console", "draughtleague.Console\DraughtLeague.Console.csproj", "{7A0A66D2-9D05-490C-BF4B-E5F4B4AE7F42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DraughtLeague.Console", "draughtleague.Console\DraughtLeague.Console.csproj", "{7A0A66D2-9D05-490C-BF4B-E5F4B4AE7F42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtLeague.Untappd", "draughtleague.Untappd\DraughtLeague.Untappd.csproj", "{7F097427-6C89-4EC5-B07D-1B9A73528032}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DraughtLeague.Untappd", "draughtleague.Untappd\DraughtLeague.Untappd.csproj", "{7F097427-6C89-4EC5-B07D-1B9A73528032}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtLeague.DAL", "DraughtLeague.DAL\DraughtLeague.DAL.csproj", "{2BDDE218-C3C0-4778-8446-2AF03E28257D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DraughtLeague.DAL", "DraughtLeague.DAL\DraughtLeague.DAL.csproj", "{2BDDE218-C3C0-4778-8446-2AF03E28257D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DraughtLeague.Web", "DraughtLeague.Web\DraughtLeague.Web.csproj", "{5B4D5B3E-22F5-4716-9D35-AF30B6A95EAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraughtLeague.Identity", "DraughtLeague.Identity\DraughtLeague.Identity.csproj", "{2A22BD6F-61C2-4724-9F41-6FF9D1B0C9C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{2BDDE218-C3C0-4778-8446-2AF03E28257D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BDDE218-C3C0-4778-8446-2AF03E28257D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BDDE218-C3C0-4778-8446-2AF03E28257D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B4D5B3E-22F5-4716-9D35-AF30B6A95EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B4D5B3E-22F5-4716-9D35-AF30B6A95EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B4D5B3E-22F5-4716-9D35-AF30B6A95EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B4D5B3E-22F5-4716-9D35-AF30B6A95EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A22BD6F-61C2-4724-9F41-6FF9D1B0C9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A22BD6F-61C2-4724-9F41-6FF9D1B0C9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A22BD6F-61C2-4724-9F41-6FF9D1B0C9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A22BD6F-61C2-4724-9F41-6FF9D1B0C9C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,13 @@
+﻿@using DraughtLeague.Web.ViewModels.TapRoom
+@model IndexVM
+
+@Model.Name
+
+<div>Tap List</div>
+
+@foreach (var beer in Model.BeerList.Where(x => x.Tap != null).OrderBy(x => x.Tap)) { }
+
+Keg Room
+
+@foreach (var beer in Model.BeerList.Where(x => x.Tap == null)) { }
+

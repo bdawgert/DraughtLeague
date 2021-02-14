@@ -4,13 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DraughtLeague.DAL.Models
 {
-    public class LineUp
+    public class Tap
     {
         [Key]
         public Guid Id { get; set; }
+        public byte TapNumber { get; set; }
         public byte Round { get; set; }
-        public byte Tap { get; set; }
-        public Guid RosterId { get; set; }
+        public Guid TapRoomId { get; set; }
+        public Guid BeerId { get; set; }
         public DateTimeOffset StartDate { get; set; }
         public DateTimeOffset? EndDate { get; set; }
         public int Points { get; set; }
@@ -18,8 +19,10 @@ namespace DraughtLeague.DAL.Models
         public DateTimeOffset? LastUpdateDate { get; set; }
         public int LastUpdateId { get; set; }
 
-        [ForeignKey("RosterId")]
-        public virtual Roster Roster { get; set; }
+        [ForeignKey("BeerId")]
+        public virtual Beer Beer { get; set; }
+        [ForeignKey("BarId")]
+        public virtual TapRoom Bar { get; set; }
 
     }
 }

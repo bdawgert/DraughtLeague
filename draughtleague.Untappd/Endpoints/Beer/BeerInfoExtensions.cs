@@ -25,19 +25,35 @@ namespace DraughtLeague.Untappd.Endpoints.Beer
             return endpoint;
         }
 
-        public static async Task<Info> GetAsync(this SearchBeerEndpoint endpoint) {
+        public static async Task<ResponseWrapper<InfoResponse>> GetAsync(this SearchBeerEndpoint endpoint) {
 
             string url = endpoint.GenerateUrl();
 
             Info info = new Info();
 
-            HttpResponseMessage responseMesage = endpoint.Service.Client.GetAsync(url).GetAwaiter().GetResult();
-            //if (!responseMesage.IsSuccessStatusCode)
+            HttpResponseMessage responseMesage = await endpoint.Service.Client.GetAsync(url);
+
+            string json = await responseMesage.Content.ReadAsStringAsync();
+            ResponseWrapper<InfoResponse> checkinsResponseWrapper = JsonConvert.DeserializeObject<ResponseWrapper<InfoResponse>>(json);
+
+            return checkinsResponseWrapper;
+
+        }
+
+        public static async Task<Info> GetDataAsync(this SearchBeerEndpoint endpoint) {
+
+            string url = endpoint.GenerateUrl();
+
+            Info info = new Info();
+
+            HttpResponseMessage responseMesage = await endpoint.Service.Client.GetAsync(url);
+            if (!responseMesage.IsSuccessStatusCode)
+                return null;
 
             string json = await responseMesage.Content.ReadAsStringAsync();
             ResponseWrapper<InfoResponse> checkinsResponseWrapper = JsonConvert.DeserializeObject<ResponseWrapper<InfoResponse>>(json);
           
-            return info;
+            return checkinsResponseWrapper?.Response.Beer;
 
         }
 

@@ -41,16 +41,31 @@ namespace DraughtLeague.Untappd.Endpoints.Beer
             return endpoint;
         }
 
-        public static async Task<List<Checkin>> GetAsync(this BeerCheckinsEndpoint endpoint) {
+        public static async Task<ResponseWrapper<CheckinsResponse>> GetAsync(this BeerCheckinsEndpoint endpoint) {
+            string url = endpoint.GenerateUrl();
 
+            HttpResponseMessage responseMesage = await endpoint.Service.Client.GetAsync(url);
+            if (!responseMesage.IsSuccessStatusCode)
+                return null;
+
+            string json = await responseMesage.Content.ReadAsStringAsync();
+            ResponseWrapper<CheckinsResponse> checkinsResponseWrapper = JsonConvert.DeserializeObject<ResponseWrapper<CheckinsResponse>>(json);
+            checkinsResponseWrapper.Response.Checkins.Items = checkinsResponseWrapper.Response.Checkins.Items
+                .Where(x => x.CreatedAt >= endpoint.MinDate).ToList();
+            return checkinsResponseWrapper;
+        }
+
+        public static async Task<List<Checkin>> GetDataAsync(this BeerCheckinsEndpoint endpoint) {
             string url = endpoint.GenerateUrl();
 
             List<Checkin> checkins = new List<Checkin>();
             DateTime minDate;
 
-            do {
-                HttpResponseMessage responseMesage = endpoint.Service.Client.GetAsync(url).GetAwaiter().GetResult();
-                //if (!responseMesage.IsSuccessStatusCode)
+            do
+            {
+                HttpResponseMessage responseMesage = await endpoint.Service.Client.GetAsync(url);
+                if (!responseMesage.IsSuccessStatusCode)
+                    return null;
 
                 string json = await responseMesage.Content.ReadAsStringAsync();
                 ResponseWrapper<CheckinsResponse> checkinsResponseWrapper = JsonConvert.DeserializeObject<ResponseWrapper<CheckinsResponse>>(json);

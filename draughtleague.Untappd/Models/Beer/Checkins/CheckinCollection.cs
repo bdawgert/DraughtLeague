@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net;
 
 namespace DraughtLeague.Untappd.Models.Beer.Checkins
 {
